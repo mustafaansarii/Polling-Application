@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: polling-app-server
+    hibernate:
+      ddl-auto: create
+
+
+  datasource:
+      url: ${DB_URL:jdbc:mysql://localhost:3306/PollingAPP?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+      username: ${DB_USERNAME:root}
+      password: ${DB_PASSWORD:Mustafa@123}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initialization-mode: always
+
+#
+#  datasource:
+#    url: jdbc:mysql://mysql-9731476-royinfo29-3c4b.f.aivencloud.com:17117/defaultdb?useSSL=true&sslMode=REQUIRED&allowPublicKeyRetrieval=true&serverTimezone=UTC
+#    username: avnadmin
+#    password: AVNS_dH2zuJCVzyEzYZKZcyq
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    initialization-mode: always
+
+  # JPA Configuration for MySQL
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect  # MySQL Hibernate dialect
+    hibernate:
+      ddl-auto: update  # 'update' for development; use 'validate' or 'none' in production
+
+  # Hibernate Logging Configuration
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+      org.springframework.security: DEBUG
+      com.polling.polling_app_server: DEBUG
+      io.jsonwebtoken: DEBUG
+
+  # Jackson Configuration (for JSON processing)
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+
+app:
+  jwtSecret: ${JWT_SECRET:9a02115a835ee03d5fb83cd8a468ea33e4090aaaec87f53c9fa54512bbef4db8dc656c82a315fa0c785c08b0134716b81ddcd0153d2a7556f2e154912cf5675f}
+  jwtExpirationInMs: 604800000
+
+  # CORS Configuration
+  cors:
+    allowedOrigins: ${CORS_ALLOWED_ORIGINS:https://localhost:3000}
+
+
+#  Mysql_db_uri=jdbc:mysql://localhost:3306/PollingAPP?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true;CORS_ALLOWED_ORIGINS=https://localhost:3000

@@ -1,0 +1,41 @@
+.server-error-page {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 40px;
+    border: 1px solid #444; /* Darker border */
+    text-align: center;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text for dark background */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+  }
+  
+  .server-error-page .server-error-title {
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    color: #ff6b6b; /* Bright red for emphasis (softer than #f44336 for dark theme) */
+  }
+  
+  .server-error-page .server-error-desc {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #b0b0b0; /* Slightly muted text */
+  }
+  
+  .server-error-go-back-btn {
+    min-width: 160px;
+    background-color: #444; /* Dark button background */
+    color: #e0e0e0; /* Light text for button */
+    border: 1px solid #666; /* Darker border for button */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px; /* Optional: Adds rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .server-error-go-back-btn:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+    border-color: #777; /* Slightly lighter border on hover */
+  }
